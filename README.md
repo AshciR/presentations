@@ -1,0 +1,22 @@
+## Presentations
+
+## Purpose
+I use this repo as place to store various presentations about Java
+best practices and tips.
+
+## Structure
+The `test` directory hosts runnable the code samples used for the presentation.
+
+Current presentations are:
+- Best Practices for Optionals in Java
+
+## Pre-requisites
+- Java 11
+- Maven 3+
+
+## Setting up
+1. Clone the repository
+2. Run `mvn clean compile` to get the build the project
+
+N.B. Some tests purposely fail for some presentations. 
+Because of this running `mvn clean test` or `mvn clean package` will fail.
