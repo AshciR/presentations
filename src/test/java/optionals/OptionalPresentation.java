@@ -18,9 +18,9 @@ import java.util.stream.IntStream;
 
 import org.junit.jupiter.api.Test;
 
-/*
+/**
 God Class being used to demonstrate how to use Optionals and their best practices
- */
+ **/
 class OptionalPresentation {
 
     //
