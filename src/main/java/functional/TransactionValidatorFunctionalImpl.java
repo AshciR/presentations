@@ -17,7 +17,7 @@ public class TransactionValidatorFunctionalImpl {
 
         return transactions
                 .stream()
-                .filter(transaction1 -> transaction1.getFlag() != Flag.NONE)
+                .filter(transaction -> transaction.getFlag() != Flag.NONE)
                 .allMatch(transaction -> transaction.getFlag() == Flag.GREEN);
 
     }

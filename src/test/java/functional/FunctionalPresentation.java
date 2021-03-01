@@ -34,8 +34,8 @@ public class FunctionalPresentation {
     /*
     What is functional programming?
 
-    "Basically, functional programming is a style of writing computer programs
-    that treat computations as evaluating mathematical functions.
+    "Functional programming is a style of writing computer programs
+    that treat computations as evaluating mathematical functions."
 
     So, what is a function in mathematics?
     This is an example: f(x): x + 2
@@ -51,7 +51,7 @@ public class FunctionalPresentation {
     /*
     Programming Paradigms:
 
-    Let's talk briefly about programming paradigms. There are 2 main ones:
+    Let's talk briefly about programming paradigms. There are 2 main ones, Imperative and Declarative.
     - Imperative, explicitly give instructions and operations in order to achieve a result.
     - Focus on HOW do to something:
 
@@ -75,7 +75,7 @@ public class FunctionalPresentation {
     /*
     Functional Programming Key Concepts:
 
-    1. Functions as 1st class citizens
+    1. Functions are 1st class citizens
     Methods/Functions can accept other functions as input params
     Example: numbers.findAll(number -> number % 2 == 0)
 
@@ -100,7 +100,7 @@ public class FunctionalPresentation {
 
     def evenNumbers = numbers.findAll(number -> number % 2 == 0) // [2,4]
     evenNumbers = numbers.findAll(number -> number % 2 == 0) // [2,4]
-    evenNumbers = numbers.findAll(number -> number % 2 == 0) // [2,4] // Will always return the ans.
+    evenNumbers = numbers.findAll(number -> number % 2 == 0) // [2,4] Will always return the ans.
 
     Benefits:
     - Predictable behavior
@@ -108,7 +108,8 @@ public class FunctionalPresentation {
     - Inherently parallelizable
 
     4. Referential Transparency
-    It just means that a function can be replaced with the value of it's output without any change to the program.
+    It just means that a function can be replaced with the value of it's output
+    without any change to the program.
     Example:
 
     def numbers = [1,2,3,4,5]
@@ -121,7 +122,7 @@ public class FunctionalPresentation {
     //
 
     /*
-    The tale of Why should we care about functional programming, a case study.
+    The tale of why should we care about functional programming, a case study.
      */
 
     /*
@@ -162,7 +163,7 @@ public class FunctionalPresentation {
     }
 
     /*
-    Ok, it works fine, but you know how life goes as a developer. Next sprint, we find out that
+    Ok, it works fine, but we know how life goes as a developer. Next sprint, we find out that
     the business changed their mind, and valid transactions are now transactions with either no flags
     or green flags.
      */
@@ -201,11 +202,14 @@ public class FunctionalPresentation {
     }
 
     /*
-    Ok, so far it works, and it's good for this sprint. Now imagine when your PO comes next sprint and
-    changes the requirement again. What happens? We're going to have to modify the code in the method.
+    Ok, so far it works, and it's good for this sprint.
+    Now imagine when your product owner comes next sprint and
+    changes the requirement again. What happens?
+    We're going to have to modify the code in the method.
 
     We know that the moment we modify existing functionality, we're introducing risk into the system.
-    And if we want to be purists or good/lazy engineers, we'll design our code with the Open/Closed principle in mind.
+    And if we want to be purists and/or good(lazy) engineers,
+    we'll want to design our code with the Open/Closed principle in mind.
 
     Open/Closed principle: Code can be open for extension, but should be closed for modification.
     With this in mind, let's see if we can refactor the code.
@@ -273,7 +277,7 @@ public class FunctionalPresentation {
 
     Ex: allTransactionsAreValidV2(List transactions, Criteria criteria)
 
-    Luckily, we can. We can pass a function into our function (Higher-order functions).
+    Luckily, we can accomplish this. We can pass a function into our function (Higher-order functions).
     Let's take a look at how.
      */
     @Test
@@ -352,7 +356,7 @@ public class FunctionalPresentation {
     into methods allows for higher abstractions, which leads to more generality, and less code.
 
     But we can still do more with these functions. Let's take a look at this use case.
-    Imagine it's the end of the year, and the company is feeling generous enough to give their employees'
+    Imagine it's the end of the year, and the company is feeling generous enough to give their employees
     a bonus. Management can't decide between giving them $1000 or double their salary.
     Fortunately enough it was the Giving Season and they decided on both!
      */
@@ -394,9 +398,10 @@ public class FunctionalPresentation {
     and decide on a more complicated calculations. Example:
     bonus = ((x * 2) + 1000) * 1.5
     or they change their mind again
-    bonus = ((x * 2) * 1.5) + 1.5
+    bonus = ((x * 2) * 1.5) + 1000
 
-    Similarly, we could make a generic function that takes a Transaction and applies the correct bonus
+    Similarly to what we did in the previous act,
+    we could make a generic function that takes a Transaction and applies the correct bonus
     def allocateBonus(Transaction transaction, Calculation calculation)
      */
 
@@ -422,12 +427,13 @@ public class FunctionalPresentation {
 
     /*
     So far we realize that business kept changing the order of the operations.
-    If only we could define the operations, then arrange the operations.
+    If only we could define the operations beforehand, then arrange the order of the operations.
     Well turns out that we can.
 
     It's a functional programming concept called composition.
     If you remember your high school maths:
     g(f(x))
+    Evaluate f(x) first, then use that result to evaluate g(x)
      */
     @Test
     void isTheCorrectBonusCalculatedComposed() {
@@ -436,7 +442,7 @@ public class FunctionalPresentation {
         Transaction payCheck = createDefaultTransactionWithNoFlag(); // $100
 
         // When: The bonus is applied
-        Function<Double, Double> timesOneAndHalfAmount = p -> p * 1.5;
+        Function<Double, Double> oneAndHalfAmount = p -> p * 1.5;
         Function<Double, Double> doubleAmount = p -> p * 2.0;
         Function<Double, Double> add1000 = p -> p + 1000;
 
@@ -449,7 +455,7 @@ public class FunctionalPresentation {
         // ((x * 2) + 1000) * 1.5
         Function<Double, Double> calculation3 = doubleAmount
                 .andThen(add1000)
-                .andThen(timesOneAndHalfAmount);
+                .andThen(oneAndHalfAmount);
 
         Transaction payCheckWithBonus = calculateAmountV3(payCheck, calculation);
         Transaction payCheckWithBonus2 = calculateAmountV3(payCheck, calculation2);
@@ -499,7 +505,7 @@ public class FunctionalPresentation {
     def overtimePay = overtimeCalculation(10) // 1.5 * 10 = 15
 
     By calling the .curry() method we returned a new function that made the rate = 1.5 and has only 1 input parameter.
-    So whenever we call payCheckCalculation(), we will multiply the hours by 1.5.
+    So whenever we call overtimeCalculation(), we will multiply the hours by 1.5.
 
     Sadly, as of now Java doesn't have a .curry() method like other languages, i.e. Groovy, but we
     can achieve similar functionality in a different way.
@@ -537,10 +543,12 @@ public class FunctionalPresentation {
     3. Lastly, we've seen how to partially apply values to functions with multiple input parameters, and convert
     them into functions with 1 input.
 
-    To wrap up, I'm not saying that functional programming is the only way to program, nor that it's suitable for
-    all use cases. But as engineers, we should have as many tools in our toolbox and use the appropriate ones for
-    solving problems. If you only have a hammer, then everything looks like a nail. Hopefully, functional programming
-    will add a screwdriver to your kit.
+    To wrap up, I'm not saying that functional programming is the only way to program,
+    nor that it's suitable for all use cases.
+    But as engineers, we should have as many tools in our toolbox and use the appropriate ones for
+    solving problems.
+    If you only have a hammer, then everything looks like a nail.
+    Hopefully, functional programming will add a screwdriver to your kit.
      */
 
     //
