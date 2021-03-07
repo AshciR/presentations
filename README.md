@@ -9,6 +9,8 @@ The `test` directory hosts runnable the code samples used for the presentation.
 
 Current presentations are:
 - Best Practices for Optionals in Java
+- Functional Programing in Java
+- Why, When, and How to Refactor
 
 ## Pre-requisites
 - Java 11
