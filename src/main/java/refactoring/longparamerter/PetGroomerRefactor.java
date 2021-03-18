@@ -1,4 +1,6 @@
-package refactoring;
+package refactoring.longparamerter;
+
+import refactoring.Animal;
 
 public class PetGroomerRefactor {
 

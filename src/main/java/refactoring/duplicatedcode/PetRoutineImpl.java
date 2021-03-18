@@ -1,4 +1,7 @@
-package refactoring;
+package refactoring.duplicatedcode;
+
+import refactoring.Animal;
+import refactoring.longmethod.PetRoutine;
 
 public class PetRoutineImpl implements PetRoutine {
 

@@ -2,8 +2,9 @@ package refactoring;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+import refactoring.duplicatedcode.PetRoutineRefactorImpl;
+import refactoring.longmethod.PetOwner;
+import refactoring.longmethod.PetOwnerRefactor;
 
 class PetOwnerTest {
 

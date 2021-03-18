@@ -1,6 +1,9 @@
 package refactoring;
 
 import org.junit.jupiter.api.Test;
+import refactoring.longparamerter.GroomRequest;
+import refactoring.longparamerter.PetGroomer;
+import refactoring.longparamerter.PetGroomerRefactor;
 
 class PetGroomerTest {
 

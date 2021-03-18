@@ -2,6 +2,8 @@ package refactoring;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import refactoring.duplicatedcode.PetRoutineImpl;
+import refactoring.duplicatedcode.PetRoutineRefactorImpl;
 
 import java.util.LinkedList;
 import java.util.List;

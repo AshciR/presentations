@@ -1,4 +1,6 @@
-package refactoring;
+package refactoring.longmethod;
+
+import refactoring.Animal;
 
 public class PetOwner {
 
