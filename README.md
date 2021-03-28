@@ -11,6 +11,7 @@ Current presentations are:
 - Best Practices for Optionals in Java
 - Functional Programing in Java
 - Why, When, and How to Refactor
+- Java 11 new features
 
 ## Pre-requisites
 - Java 11
