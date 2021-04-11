@@ -12,6 +12,7 @@ Current presentations are:
 - Functional Programing in Java
 - Why, When, and How to Refactor
 - Java 11 new features
+- Using the Grouping collector in Java 8
 
 ## Pre-requisites
 - Java 11
