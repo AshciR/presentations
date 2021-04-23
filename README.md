@@ -13,6 +13,8 @@ Current presentations are:
 - Why, When, and How to Refactor
 - Java 11 new features
 - Using the Grouping collector in Java 8
+- Effective Java
+    - Static Factory Methods
 
 ## Pre-requisites
 - Java 11
