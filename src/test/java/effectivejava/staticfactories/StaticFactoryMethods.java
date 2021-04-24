@@ -1,4 +1,4 @@
-package effectivejava;
+package effectivejava.staticfactories;
 
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * Consider static factory methods instead of constructors
+ * Item 1: Consider static factory methods instead of constructors
  */
 public class StaticFactoryMethods {
 
@@ -111,13 +111,15 @@ public class StaticFactoryMethods {
         List<Watchable> movies = List.of(gRatedMovie, pgRatedMovie, rRatedMovie);
         movies.forEach(it -> System.out.println(it.watch()));
 
+        System.out.println("Class Type of movie is: " + gRatedMovie.getClass().toString());
     }
 
     /*
-    Advantage 4: Can return objects can vary call to call depending on the input argument(s).
+    Advantage 4: Can return objects that can vary from call to call
+    depending on the input argument(s).
 
     We can hide the implementation details behind the object's construction.
-    The client only cares that object fulfills it's behavior.
+    Because the client should only care that object fulfills it's behavior.
 
     Reminiscent of the Strategy pattern.
      */
@@ -127,11 +129,13 @@ public class StaticFactoryMethods {
         int availableFreeTimeInMins = 20;
         Watchable somethingToWatch = Watchable.getMeSomethingToWatch(availableFreeTimeInMins);
         System.out.println(somethingToWatch.watch());
+        System.out.println("Class Type is: " + somethingToWatch.getClass().toString());
 
         // We realize that we got more time b/c we finished the sprint work early
         availableFreeTimeInMins = 60;
         somethingToWatch = Watchable.getMeSomethingToWatch(availableFreeTimeInMins);
         System.out.println(somethingToWatch.watch());
+        System.out.println("Class Type is: " + somethingToWatch.getClass().toString());
 
     }
 
@@ -161,7 +165,7 @@ public class StaticFactoryMethods {
         System.out.println(keepingItReal);
 
         // newInstance -- creates a new instance of an object for you
-        // Please don't ever do this. An angel loses it's wings every time...
+        // Please don't ever do this. An angel loses its wings every time...
         Object strArr = Array.newInstance(String.class, 10);
         System.out.println(strArr);
 
@@ -172,5 +176,8 @@ public class StaticFactoryMethods {
         System.out.println(movie);
 
     }
+
+    // --- References ---
+    // https://www.oreilly.com/library/view/effective-java/9780134686097/
 
 }

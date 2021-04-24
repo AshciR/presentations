@@ -1,4 +1,4 @@
-package effectivejava;
+package effectivejava.staticfactories;
 
 /**
  * Things that can be watched or viewed

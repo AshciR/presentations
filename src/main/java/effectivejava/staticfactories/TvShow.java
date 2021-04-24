@@ -1,4 +1,4 @@
-package effectivejava;
+package effectivejava.staticfactories;
 
 public class TvShow implements Watchable {
 

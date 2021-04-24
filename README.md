@@ -15,6 +15,7 @@ Current presentations are:
 - Using the Grouping collector in Java 8
 - Effective Java
     - Static Factory Methods
+    - Try-with-resources
 
 ## Pre-requisites
 - Java 11
