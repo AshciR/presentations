@@ -1,4 +1,4 @@
-package effectivejava;
+package effectivejava.staticfactories;
 
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * Consider static factory methods instead of constructors
+ * Item 1: Consider static factory methods instead of constructors
  */
 public class StaticFactoryMethods {
 
@@ -161,7 +161,7 @@ public class StaticFactoryMethods {
         System.out.println(keepingItReal);
 
         // newInstance -- creates a new instance of an object for you
-        // Please don't ever do this. An angel loses it's wings every time...
+        // Please don't ever do this. An angel loses its wings every time...
         Object strArr = Array.newInstance(String.class, 10);
         System.out.println(strArr);
 
@@ -172,5 +172,8 @@ public class StaticFactoryMethods {
         System.out.println(movie);
 
     }
+
+    // --- References ---
+    // https://www.oreilly.com/library/view/effective-java/9780134686097/
 
 }

@@ -1,4 +1,4 @@
-package effectivejava;
+package effectivejava.staticfactories;
 
 class Movie implements Watchable {
 
