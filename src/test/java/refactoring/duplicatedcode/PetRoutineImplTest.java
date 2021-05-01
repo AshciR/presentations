@@ -1,7 +1,9 @@
-package refactoring;
+package refactoring.duplicatedcode;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import refactoring.Animal;
+import refactoring.Dog;
 import refactoring.duplicatedcode.PetRoutineImpl;
 import refactoring.duplicatedcode.PetRoutineRefactorImpl;
 

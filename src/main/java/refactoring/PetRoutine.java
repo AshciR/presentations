@@ -1,4 +1,4 @@
-package refactoring.longmethod;
+package refactoring;
 
 import refactoring.Animal;
 
