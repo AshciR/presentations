@@ -11,6 +11,11 @@ Current presentations are:
 - Best Practices for Optionals in Java
 - Functional Programing in Java
 - Why, When, and How to Refactor
+  - Duplicated code
+  - Long Method
+  - Long Parameter
+  - Switch Statements
+  - Flag Conditionals
 - Java 11 new features
 - Using the Grouping collector in Java 8
 - Effective Java

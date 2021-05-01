@@ -1,4 +1,4 @@
-package refactoring;
+package refactoring.switchstatements;
 
 import org.junit.jupiter.api.Test;
 import refactoring.switchstatements.*;

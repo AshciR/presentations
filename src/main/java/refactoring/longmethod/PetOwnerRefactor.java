@@ -1,6 +1,7 @@
 package refactoring.longmethod;
 
 import refactoring.Animal;
+import refactoring.PetRoutine;
 
 public class PetOwnerRefactor {
 
