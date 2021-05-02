@@ -16,6 +16,7 @@ Current presentations are:
   - Long Parameter
   - Switch Statements
   - Flag Conditionals
+  - Guard Clauses
 - Java 11 new features
 - Using the Grouping collector in Java 8
 - Effective Java
