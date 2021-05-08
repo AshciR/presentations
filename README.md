@@ -22,6 +22,7 @@ Current presentations are:
 - Effective Java
     - Static Factory Methods
     - Try-with-resources
+    - Minimize Mutability
 
 ## Pre-requisites
 - Java 11
